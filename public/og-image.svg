@@ -1,0 +1,40 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#581c87;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f172a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  
+  <!-- Decorative circles -->
+  <circle cx="100" cy="100" r="150" fill="#a855f7" opacity="0.1"/>
+  <circle cx="1100" cy="530" r="200" fill="#ec4899" opacity="0.1"/>
+  
+  <!-- Main content -->
+  <text x="600" y="250" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="white" text-anchor="middle">
+    Lokesh S
+  </text>
+  
+  <text x="600" y="320" font-family="Arial, sans-serif" font-size="36" fill="#a855f7" text-anchor="middle">
+    Full Stack Developer
+  </text>
+  
+  <text x="600" y="380" font-family="Arial, sans-serif" font-size="24" fill="#94a3b8" text-anchor="middle">
+    CODE • BUILD • ANALYZE • INNOVATE
+  </text>
+  
+  <text x="600" y="480" font-family="Arial, sans-serif" font-size="20" fill="#cbd5e1" text-anchor="middle">
+    React • Node.js • Python • MongoDB • Data Analytics
+  </text>
+  
+  <!-- Open to work badge -->
+  <rect x="500" y="520" width="200" height="40" rx="20" fill="#22c55e" opacity="0.2"/>
+  <circle cx="530" cy="540" r="6" fill="#22c55e"/>
+  <text x="600" y="547" font-family="Arial, sans-serif" font-size="18" fill="#22c55e" text-anchor="middle" font-weight="600">
+    Open to Work
+  </text>
+</svg>
