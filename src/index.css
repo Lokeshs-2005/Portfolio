@@ -3,6 +3,7 @@
 /* Smooth scroll behavior */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 100px; /* Offset for fixed header */
 }
 
 /* Custom scrollbar */

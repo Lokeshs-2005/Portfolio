@@ -92,28 +92,11 @@ export default function Portfolio() {
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white">
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-slate-900/95 backdrop-blur-md z-50 border-b border-purple-500/30 shadow-xl shadow-purple-500/20">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          {/* Logo */}
-          <a href="#home" className="flex items-center gap-4 group">
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full blur-md opacity-50 group-hover:opacity-75 transition"></div>
-              <img 
-                src="/logo.png" 
-                alt="Lokesh S Logo" 
-                className="relative h-14 w-14 transition-transform group-hover:scale-110 duration-300"
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                  e.target.nextSibling.style.display = 'block';
-                }}
-              />
-              <div className="relative text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent" style={{display: 'none'}}>
-                LS
-              </div>
-            </div>
-            <div className="hidden md:flex flex-col">
-              <span className="text-xl font-bold bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">Lokesh S</span>
-              <span className="text-xs text-blue-400 font-medium tracking-wider">CODE • BUILD • ANALYZE • INNOVATE</span>
-            </div>
+        <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+          {/* Brand Text Only */}
+          <a href="#home" className="flex flex-col group">
+            <span className="text-2xl font-bold bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">Lokesh S</span>
+            <span className="text-xs text-blue-400 font-medium tracking-wider">CODE • BUILD • ANALYZE • INNOVATE</span>
           </a>
           
           {/* Desktop Menu */}
@@ -199,6 +182,18 @@ export default function Portfolio() {
                   <div className="w-full h-full flex items-center justify-center text-8xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent" style={{display: 'none'}}>
                     LS
                   </div>
+                </div>
+              </div>
+              
+              {/* Professional Logo Badge - Bottom Right */}
+              <div className="absolute -bottom-6 -right-6">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-xl opacity-75"></div>
+                  <img 
+                    src="/logo.png" 
+                    alt="Lokesh S Logo" 
+                    className="relative w-28 h-28 rounded-full border-4 border-slate-900 shadow-2xl hover:scale-110 transition-transform duration-300"
+                  />
                 </div>
               </div>
               
@@ -413,9 +408,18 @@ export default function Portfolio() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-purple-500/20 py-8 text-center text-gray-400">
-        <p>© 2026 Lokesh S. Built with React & Tailwind CSS</p>
-        <p className="text-sm mt-2">Crafted with 💜 for opportunities</p>
+      <footer className="border-t border-purple-500/20 py-12 text-center text-gray-400 bg-slate-900/50">
+        <div className="max-w-4xl mx-auto">
+          <img 
+            src="/logo.png" 
+            alt="Lokesh S Logo" 
+            className="w-24 h-24 mx-auto mb-4 hover:scale-110 transition-transform duration-300"
+          />
+          <p className="text-lg font-semibold text-white mb-2">Lokesh S</p>
+          <p className="text-sm text-blue-400 mb-4">CODE • BUILD • ANALYZE • INNOVATE</p>
+          <p className="text-sm">© 2026 Lokesh S. Built with React & Tailwind CSS</p>
+          <p className="text-xs mt-2">Crafted with 💜 for opportunities</p>
+        </div>
       </footer>
 
       {/* Scroll to Top Button */}
