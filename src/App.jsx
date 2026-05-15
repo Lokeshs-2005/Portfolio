@@ -294,12 +294,12 @@ export default function Portfolio() {
             <div className="grid md:grid-cols-2 gap-8">
               {internshipProjects.map((project) => (
                 <div key={project.title} className="bg-slate-800/50 rounded-xl overflow-hidden border border-purple-500/20 hover:border-purple-500/50 transition hover:-translate-y-2 duration-300">
-                  <div className="h-48 bg-gradient-to-br from-purple-600/30 to-pink-600/30 flex items-center justify-center overflow-hidden">
+                  <div className="h-48 bg-slate-900 flex items-center justify-center overflow-hidden">
                     {project.image ? (
                       <img 
                         src={project.image} 
                         alt={project.title}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain p-2"
                       />
                     ) : (
                       <div className="text-center p-4">
@@ -340,12 +340,12 @@ export default function Portfolio() {
             <div className="grid md:grid-cols-2 gap-8">
               {personalProjects.map((project) => (
                 <div key={project.title} className="bg-slate-800/50 rounded-xl overflow-hidden border border-purple-500/20 hover:border-purple-500/50 transition hover:-translate-y-2 duration-300">
-                  <div className="h-48 bg-gradient-to-br from-blue-600/30 to-purple-600/30 flex items-center justify-center overflow-hidden">
+                  <div className="h-48 bg-slate-900 flex items-center justify-center overflow-hidden">
                     {project.image ? (
                       <img 
                         src={project.image} 
                         alt={project.title}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain p-2"
                       />
                     ) : (
                       <div className="text-center p-4 bg-slate-900/50 w-full h-full flex flex-col items-center justify-center">
