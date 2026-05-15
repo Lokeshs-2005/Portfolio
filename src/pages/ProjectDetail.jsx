@@ -2,6 +2,8 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { projectsData, projectsList } from '../data/projectsData';
 import VideoPlayer from '../components/VideoPlayer';
+import YouTubeEmbed from '../components/YouTubeEmbed';
+import GoogleDriveVideo from '../components/GoogleDriveVideo';
 
 export default function ProjectDetail() {
   const { projectId } = useParams();
@@ -173,7 +175,30 @@ export default function ProjectDetail() {
               <span className="text-4xl">🎥</span>
               Project Demo Video
             </h2>
-            {project.video.includes('terabox.com') ? (
+            {project.video.includes('drive.google.com') ? (
+              <div>
+                <GoogleDriveVideo 
+                  url={project.video}
+                  title={`${project.title} - Demo Walkthrough`}
+                />
+                <p className="text-gray-400 text-sm mt-4 text-center">
+                  Watch the complete walkthrough of {project.title} features and functionality in high quality
+                </p>
+              </div>
+            ) : project.video.includes('youtube.com') || project.video.includes('youtu.be') ? (
+              <div>
+                <YouTubeEmbed 
+                  videoId={project.video.includes('youtu.be') 
+                    ? project.video.split('youtu.be/')[1].split('?')[0]
+                    : project.video.split('v=')[1]?.split('&')[0]
+                  }
+                  title={`${project.title} - Demo Walkthrough`}
+                />
+                <p className="text-gray-400 text-sm mt-4 text-center">
+                  Watch the complete walkthrough of {project.title} features and functionality in HD
+                </p>
+              </div>
+            ) : project.video.includes('terabox.com') ? (
               <div className="bg-slate-800/50 p-8 rounded-xl border border-purple-500/20 text-center">
                 <div className="mb-6">
                   <svg className="w-24 h-24 mx-auto text-purple-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -197,14 +222,19 @@ export default function ProjectDetail() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                   </svg>
                 </a>
-                <p className="text-sm text-gray-500 mt-4">Video hosted on Terrabox Cloud Storage</p>
+                <p className="text-sm text-gray-500 mt-4">Video hosted externally</p>
               </div>
-            ) : (
-              <VideoPlayer 
-                src={project.video} 
-                title={`${project.title} - Demo Walkthrough`}
-              />
-            )}
+            ) : project.video.startsWith('/') ? (
+              <div>
+                <VideoPlayer 
+                  src={project.video} 
+                  title={`${project.title} - Demo Walkthrough`}
+                />
+                <p className="text-gray-400 text-sm mt-4 text-center">
+                  Watch the complete walkthrough of {project.title} features and functionality
+                </p>
+              </div>
+            ) : null}
           </div>
         </section>
       ) : project.screenshots && project.screenshots.length > 0 ? (

@@ -62,7 +62,7 @@ export const projectsData = {
       { url: "/goodkart project screenshot.png", caption: "Goodkart Platform Interface" }
     ],
     
-    video: "https://1024terabox.com/s/1E-eEQFHGaMPgXOdvodn8Ig",
+    video: "https://drive.google.com/file/d/1yG0GDbnoe30qPFME8Qo74mMR7S6ABTA0/view?usp=drive_link",
     
     technicalDetails: {
       frontend: {
@@ -189,7 +189,7 @@ export const projectsData = {
       { url: "/goodgide project screenshot.png", caption: "Goodgide Platform Interface" }
     ],
     
-    video: "https://1024terabox.com/s/1hACQFlofrCjw91JHAj6rgQ",
+    video: "https://drive.google.com/file/d/1mBJVXgHOKPGM-_Gog1CdOhJ5ZSYlWy4o/view?usp=drive_link",
     
     technicalDetails: {
       frontend: {
