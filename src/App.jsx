@@ -1,13 +1,12 @@
 import { useState, useEffect } from 'react';
 
 export default function Portfolio() {
-  const [activeSection, setActiveSection] = useState('home');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [typedText, setTypedText] = useState('');
+  const [roleIndex, setRoleIndex] = useState(0);
   
   const roles = ['Software Engineer', 'Backend Developer', 'Full Stack Developer', 'Data Analyst'];
-  const [roleIndex, setRoleIndex] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -92,24 +91,43 @@ export default function Portfolio() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-slate-900/80 backdrop-blur-md z-50 border-b border-purple-500/20">
+      <nav className="fixed top-0 w-full bg-slate-900/95 backdrop-blur-md z-50 border-b border-purple-500/30 shadow-xl shadow-purple-500/20">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-            Lokesh S
-          </h1>
+          {/* Logo */}
+          <a href="#home" className="flex items-center gap-4 group">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full blur-md opacity-50 group-hover:opacity-75 transition"></div>
+              <img 
+                src="/logo.png" 
+                alt="Lokesh S Logo" 
+                className="relative h-14 w-14 transition-transform group-hover:scale-110 duration-300"
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                  e.target.nextSibling.style.display = 'block';
+                }}
+              />
+              <div className="relative text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent" style={{display: 'none'}}>
+                LS
+              </div>
+            </div>
+            <div className="hidden md:flex flex-col">
+              <span className="text-xl font-bold bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">Lokesh S</span>
+              <span className="text-xs text-blue-400 font-medium tracking-wider">CODE • BUILD • ANALYZE • INNOVATE</span>
+            </div>
+          </a>
           
           {/* Desktop Menu */}
-          <div className="hidden md:flex gap-8">
-            <a href="#home" className="hover:text-purple-400 transition">Home</a>
-            <a href="#about" className="hover:text-purple-400 transition">About</a>
-            <a href="#skills" className="hover:text-purple-400 transition">Skills</a>
-            <a href="#projects" className="hover:text-purple-400 transition">Projects</a>
-            <a href="#contact" className="hover:text-purple-400 transition">Contact</a>
+          <div className="hidden md:flex gap-8 items-center">
+            <a href="#home" className="text-gray-300 hover:text-white hover:scale-105 transition-all duration-200 font-medium">Home</a>
+            <a href="#about" className="text-gray-300 hover:text-white hover:scale-105 transition-all duration-200 font-medium">About</a>
+            <a href="#skills" className="text-gray-300 hover:text-white hover:scale-105 transition-all duration-200 font-medium">Skills</a>
+            <a href="#projects" className="text-gray-300 hover:text-white hover:scale-105 transition-all duration-200 font-medium">Projects</a>
+            <a href="#contact" className="bg-gradient-to-r from-purple-500 to-blue-500 px-5 py-2 rounded-lg hover:scale-105 transition-all duration-200 font-semibold shadow-lg shadow-purple-500/30">Contact</a>
           </div>
 
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden text-white"
+            className="md:hidden text-white p-2 hover:bg-purple-500/20 rounded-lg transition"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -124,13 +142,13 @@ export default function Portfolio() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-slate-900/95 backdrop-blur-md border-t border-purple-500/20">
-            <div className="flex flex-col gap-4 px-6 py-4">
-              <a href="#home" onClick={() => setMobileMenuOpen(false)} className="hover:text-purple-400 transition">Home</a>
-              <a href="#about" onClick={() => setMobileMenuOpen(false)} className="hover:text-purple-400 transition">About</a>
-              <a href="#skills" onClick={() => setMobileMenuOpen(false)} className="hover:text-purple-400 transition">Skills</a>
-              <a href="#projects" onClick={() => setMobileMenuOpen(false)} className="hover:text-purple-400 transition">Projects</a>
-              <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="hover:text-purple-400 transition">Contact</a>
+          <div className="md:hidden bg-slate-900/98 backdrop-blur-md border-t border-purple-500/30">
+            <div className="flex flex-col gap-1 px-6 py-4">
+              <a href="#home" onClick={() => setMobileMenuOpen(false)} className="py-3 px-4 hover:bg-purple-500/10 rounded-lg transition">Home</a>
+              <a href="#about" onClick={() => setMobileMenuOpen(false)} className="py-3 px-4 hover:bg-purple-500/10 rounded-lg transition">About</a>
+              <a href="#skills" onClick={() => setMobileMenuOpen(false)} className="py-3 px-4 hover:bg-purple-500/10 rounded-lg transition">Skills</a>
+              <a href="#projects" onClick={() => setMobileMenuOpen(false)} className="py-3 px-4 hover:bg-purple-500/10 rounded-lg transition">Projects</a>
+              <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="py-3 px-4 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg transition text-center font-semibold">Contact</a>
             </div>
           </div>
         )}
