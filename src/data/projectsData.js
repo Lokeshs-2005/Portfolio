@@ -62,7 +62,7 @@ export const projectsData = {
       { url: "/goodkart project screenshot.png", caption: "Goodkart Platform Interface" }
     ],
     
-    video: "/projects videos/Goodkart project demo.mp4",
+    video: "https://1024terabox.com/s/1E-eEQFHGaMPgXOdvodn8Ig",
     
     technicalDetails: {
       frontend: {
@@ -189,7 +189,7 @@ export const projectsData = {
       { url: "/goodgide project screenshot.png", caption: "Goodgide Platform Interface" }
     ],
     
-    video: "/projects videos/Goodgide project demo.mp4",
+    video: "https://1024terabox.com/s/1hACQFlofrCjw91JHAj6rgQ",
     
     technicalDetails: {
       frontend: {
@@ -589,7 +589,7 @@ export const projectsData = {
     tagline: "NLP-powered Customer Feedback Analysis System",
     category: "Machine Learning",
     tech: ["Python", "NLP", "Machine Learning", "Scikit-learn", "NLTK", "Pandas"],
-    image: null,
+    image: "/sentiment analysis project screenshots/main photo.png",
     liveDemo: null,
     github: "https://github.com/Lokeshs-2005/Product_Sentiment_Analysis",
     
@@ -642,7 +642,13 @@ export const projectsData = {
       }
     ],
     
-    screenshots: [],
+    screenshots: [
+      { url: "/sentiment analysis project screenshots/main photo.png", caption: "Sentiment Analysis Dashboard - Main Interface" },
+      { url: "/sentiment analysis project screenshots/screenshot1.png", caption: "Model Performance Metrics and Evaluation" },
+      { url: "/sentiment analysis project screenshots/screenshot2.png", caption: "Text Processing and Analysis Results" }
+    ],
+    
+    video: null,
     
     technicalDetails: {
       nlp: {

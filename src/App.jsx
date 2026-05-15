@@ -103,7 +103,7 @@ export default function Portfolio() {
       description: "ML project analyzing customer sentiment from product reviews using text processing and classification algorithms.",
       tech: ["Python", "NLP", "Machine Learning"],
       category: "Machine Learning",
-      image: null,
+      image: "/sentiment analysis project screenshots/main photo.png",
     },
   ];
 

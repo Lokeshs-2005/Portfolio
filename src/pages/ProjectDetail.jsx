@@ -173,13 +173,38 @@ export default function ProjectDetail() {
               <span className="text-4xl">🎥</span>
               Project Demo Video
             </h2>
-            <VideoPlayer 
-              src={project.video} 
-              title={`${project.title} - Demo Walkthrough`}
-            />
-            <p className="text-gray-400 text-sm mt-4 text-center">
-              Watch the complete walkthrough of {project.title} features and functionality
-            </p>
+            {project.video.includes('terabox.com') ? (
+              <div className="bg-slate-800/50 p-8 rounded-xl border border-purple-500/20 text-center">
+                <div className="mb-6">
+                  <svg className="w-24 h-24 mx-auto text-purple-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <h3 className="text-2xl font-semibold mb-3">{project.title} - Demo Walkthrough</h3>
+                  <p className="text-gray-400 mb-6">Watch the complete walkthrough of {project.title} features and functionality</p>
+                </div>
+                <a 
+                  href={project.video}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 bg-gradient-to-r from-purple-500 to-pink-500 px-8 py-4 rounded-lg font-semibold hover:scale-105 transition text-lg"
+                >
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                  Watch Demo Video
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
+                <p className="text-sm text-gray-500 mt-4">Video hosted on Terrabox Cloud Storage</p>
+              </div>
+            ) : (
+              <VideoPlayer 
+                src={project.video} 
+                title={`${project.title} - Demo Walkthrough`}
+              />
+            )}
           </div>
         </section>
       ) : project.screenshots && project.screenshots.length > 0 ? (
@@ -191,7 +216,7 @@ export default function ProjectDetail() {
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               {project.screenshots.map((screenshot, index) => (
-                <div key={index} className="bg-slate-800/50 rounded-xl overflow-hidden border border-purple-500/20">
+                <div key={index} className="bg-slate-800/50 rounded-xl overflow-hidden border border-purple-500/20 hover:border-purple-500/50 transition">
                   <img 
                     src={screenshot.url} 
                     alt={screenshot.caption}
