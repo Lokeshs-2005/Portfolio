@@ -52,12 +52,14 @@ export default function Portfolio() {
       description: "Multi-vendor B2B and B2C e-commerce platform with authentication, dashboards, order tracking, and payment workflows. Contributed to frontend & backend modules during 3-month internship.",
       tech: ["React", "Node.js", "Express", "MongoDB", "REST APIs"],
       category: "Full Stack",
+      image: "/goodkart project screenshot.png",
     },
     {
       title: "Goodgide",
       description: "Internal software tool with application logic, JSON data integration, and REST API implementation.",
       tech: ["Frontend", "Backend", "REST APIs", "JSON"],
       category: "Software Development",
+      image: "/goodgide project screenshot.png",
     },
   ];
 
@@ -67,24 +69,28 @@ export default function Portfolio() {
       description: "Real-time hand gesture recognition system using OpenCV and MediaPipe for OS navigation with ML-based feature extraction.",
       tech: ["Python", "OpenCV", "MediaPipe", "Machine Learning"],
       category: "Computer Vision",
+      image: null, // Backend/Terminal project
     },
     {
       title: "Library Management System",
       description: "Full-featured library management with CRUD operations, secure authentication, and scalable backend APIs.",
       tech: ["Python", "MySQL", "Authentication", "Backend APIs"],
       category: "Full Stack",
+      image: null, // Backend/Terminal project
     },
     {
       title: "Xbox Sales Analytics Dashboard",
       description: "Interactive data visualization dashboard analyzing Xbox sales data with modern analytics tools.",
       tech: ["Power BI", "Data Analysis", "Visualization"],
       category: "Data Analytics",
+      image: "/xbox projecct screenshot.jpeg",
     },
     {
       title: "Sentiment Analysis of Product Reviews",
       description: "ML project analyzing customer sentiment from product reviews using text processing and classification algorithms.",
       tech: ["Python", "NLP", "Machine Learning"],
       category: "Machine Learning",
+      image: null, // Backend/Terminal project
     },
   ];
 
@@ -288,11 +294,19 @@ export default function Portfolio() {
             <div className="grid md:grid-cols-2 gap-8">
               {internshipProjects.map((project) => (
                 <div key={project.title} className="bg-slate-800/50 rounded-xl overflow-hidden border border-purple-500/20 hover:border-purple-500/50 transition hover:-translate-y-2 duration-300">
-                  <div className="h-48 bg-gradient-to-br from-purple-600/30 to-pink-600/30 flex items-center justify-center">
-                    <div className="text-center p-4">
-                      <p className="text-lg font-semibold">Project Screenshot</p>
-                      <p className="text-sm text-gray-300 mt-2">Coming Soon</p>
-                    </div>
+                  <div className="h-48 bg-gradient-to-br from-purple-600/30 to-pink-600/30 flex items-center justify-center overflow-hidden">
+                    {project.image ? (
+                      <img 
+                        src={project.image} 
+                        alt={project.title}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <div className="text-center p-4">
+                        <p className="text-lg font-semibold">Project Screenshot</p>
+                        <p className="text-sm text-gray-300 mt-2">Coming Soon</p>
+                      </div>
+                    )}
                   </div>
                   <div className="p-6">
                     <div className="flex justify-between items-start mb-3">
@@ -326,11 +340,22 @@ export default function Portfolio() {
             <div className="grid md:grid-cols-2 gap-8">
               {personalProjects.map((project) => (
                 <div key={project.title} className="bg-slate-800/50 rounded-xl overflow-hidden border border-purple-500/20 hover:border-purple-500/50 transition hover:-translate-y-2 duration-300">
-                  <div className="h-48 bg-gradient-to-br from-blue-600/30 to-purple-600/30 flex items-center justify-center">
-                    <div className="text-center p-4">
-                      <p className="text-lg font-semibold">Project Screenshot</p>
-                      <p className="text-sm text-gray-300 mt-2">Coming Soon</p>
-                    </div>
+                  <div className="h-48 bg-gradient-to-br from-blue-600/30 to-purple-600/30 flex items-center justify-center overflow-hidden">
+                    {project.image ? (
+                      <img 
+                        src={project.image} 
+                        alt={project.title}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <div className="text-center p-4 bg-slate-900/50 w-full h-full flex flex-col items-center justify-center">
+                        <svg className="w-16 h-16 mb-3 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                        </svg>
+                        <p className="text-sm font-semibold text-blue-300">Backend/Terminal Project</p>
+                        <p className="text-xs text-gray-400 mt-1">Code-based implementation</p>
+                      </div>
+                    )}
                   </div>
                   <div className="p-6">
                     <div className="flex justify-between items-start mb-3">
