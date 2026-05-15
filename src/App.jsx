@@ -1,12 +1,19 @@
 import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 export default function Portfolio() {
+  const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [typedText, setTypedText] = useState('');
   const [roleIndex, setRoleIndex] = useState(0);
   
-  const roles = ['Software Engineer', 'Backend Developer', 'Full Stack Developer', 'Data Analyst'];
+  const roles = ['Software Development', 'Data Analytics', 'AI & Automation', 'Backend Engineering', 'Full Stack Applications', 'Problem Solving'];
+
+  // Scroll to top when returning to portfolio
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,6 +55,7 @@ export default function Portfolio() {
 
   const internshipProjects = [
     {
+      id: "goodkart",
       title: "Goodkart",
       description: "Multi-vendor B2B and B2C e-commerce platform with authentication, dashboards, order tracking, and payment workflows. Contributed to frontend & backend modules during 3-month internship.",
       tech: ["React", "Node.js", "Express", "MongoDB", "REST APIs"],
@@ -55,42 +63,47 @@ export default function Portfolio() {
       image: "/goodkart project screenshot.png",
     },
     {
+      id: "goodgide",
       title: "Goodgide",
-      description: "Internal software tool with application logic, JSON data integration, and REST API implementation.",
-      tech: ["Frontend", "Backend", "REST APIs", "JSON"],
-      category: "Software Development",
+      description: "Expert consultation platform with real-time video calls, chat messaging, and appointment scheduling. Built with React, TypeScript, Node.js, PostgreSQL, and Socket.IO for seamless user experience.",
+      tech: ["React", "TypeScript", "Node.js", "PostgreSQL", "Socket.IO"],
+      category: "Full Stack",
       image: "/goodgide project screenshot.png",
     },
   ];
 
   const personalProjects = [
     {
+      id: "os-gestures",
       title: "OS Navigation Using Hand Gestures",
       description: "Real-time hand gesture recognition system using OpenCV and MediaPipe for OS navigation with ML-based feature extraction.",
       tech: ["Python", "OpenCV", "MediaPipe", "Machine Learning"],
       category: "Computer Vision",
-      image: null, // Backend/Terminal project
+      image: null,
     },
     {
+      id: "library-management",
       title: "Library Management System",
       description: "Full-featured library management with CRUD operations, secure authentication, and scalable backend APIs.",
       tech: ["Python", "MySQL", "Authentication", "Backend APIs"],
       category: "Full Stack",
-      image: null, // Backend/Terminal project
+      image: "/Library project screenshot.png",
     },
     {
-      title: "Xbox Sales Analytics Dashboard",
+      id: "xbox-analytics",
+      title: "Xbox Sales Analytics Real Time Dashboard",
       description: "Interactive data visualization dashboard analyzing Xbox sales data with modern analytics tools.",
       tech: ["Power BI", "Data Analysis", "Visualization"],
       category: "Data Analytics",
       image: "/xbox projecct screenshot.jpeg",
     },
     {
+      id: "sentiment-analysis",
       title: "Sentiment Analysis of Product Reviews",
       description: "ML project analyzing customer sentiment from product reviews using text processing and classification algorithms.",
       tech: ["Python", "NLP", "Machine Learning"],
       category: "Machine Learning",
-      image: null, // Backend/Terminal project
+      image: null,
     },
   ];
 
@@ -147,7 +160,7 @@ export default function Portfolio() {
       <section id="home" className="pt-32 pb-20 px-6">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="fade-in-up">
-            <p className="text-purple-400 text-lg mb-4">👋 Full Stack Developer</p>
+            <p className="text-purple-400 text-lg mb-4">👋 Tech Enthusiast • Developer • Analyst</p>
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
               Hi, I'm <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient">Lokesh S</span>
               <span className="ml-4 inline-flex items-center gap-2 text-sm font-normal bg-green-500/20 text-green-400 px-3 py-1 rounded-full border border-green-500/30">
@@ -161,7 +174,7 @@ export default function Portfolio() {
               </p>
             </div>
             <p className="text-gray-300 text-lg leading-relaxed mb-8">
-              Building scalable software systems and data-driven solutions. Experienced with React, Node.js, Python, and modern development tools.
+              Passionate about building scalable applications, solving real-world problems, and exploring modern technologies across software development, AI, and data-driven systems.
             </p>
             <div className="flex flex-wrap gap-4">
               <a href="#projects" className="bg-gradient-to-r from-purple-500 to-pink-500 px-6 py-3 rounded-lg font-semibold hover:scale-105 transition">
@@ -324,9 +337,12 @@ export default function Portfolio() {
                       ))}
                     </div>
                     <div className="flex gap-3">
-                      <button className="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 px-4 py-2 rounded-lg text-sm font-semibold hover:scale-105 transition">
+                      <Link 
+                        to={`/project/${project.id}`}
+                        className="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 px-4 py-2 rounded-lg text-sm font-semibold hover:scale-105 transition text-center"
+                      >
                         View Details
-                      </button>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -373,12 +389,24 @@ export default function Portfolio() {
                       ))}
                     </div>
                     <div className="flex gap-3">
-                      <button className="flex-1 bg-gradient-to-r from-blue-500 to-purple-500 px-4 py-2 rounded-lg text-sm font-semibold hover:scale-105 transition">
-                        View Demo
-                      </button>
-                      <button className="flex-1 border border-purple-400 px-4 py-2 rounded-lg text-sm hover:bg-purple-500/10 transition">
-                        GitHub
-                      </button>
+                      <Link 
+                        to={`/project/${project.id}`}
+                        className="flex-1 bg-gradient-to-r from-blue-500 to-purple-500 px-4 py-2 rounded-lg text-sm font-semibold hover:scale-105 transition text-center"
+                      >
+                        View Details
+                      </Link>
+                      {(project.id === 'library-management' || project.id === 'sentiment-analysis') && (
+                        <a 
+                          href={project.id === 'library-management' 
+                            ? 'https://github.com/Lokeshs-2005/Library_Management_System'
+                            : 'https://github.com/Lokeshs-2005/Product_Sentiment_Analysis'}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 border border-purple-400 px-4 py-2 rounded-lg text-sm hover:bg-purple-500/10 transition text-center"
+                        >
+                          GitHub
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>
