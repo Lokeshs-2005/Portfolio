@@ -236,7 +236,7 @@ export default function Portfolio() {
             <div>
               <h3 className="text-2xl font-semibold mb-4 text-purple-400">Background</h3>
               <p className="text-gray-300 leading-relaxed mb-6">
-                I'm a final-year Information Science Engineering student at BMSIT&M, Bengaluru (CGPA: 8.22/10). 
+                I'm a final-year Information Science Engineering student at BMSIT&M, Bengaluru (CGPA: 8.36/10). 
                 I combine software development expertise with data analytics skills to build impactful real-world solutions.
               </p>
               <h3 className="text-2xl font-semibold mb-4 text-purple-400">Experience</h3>
@@ -268,7 +268,7 @@ export default function Portfolio() {
               <ul className="space-y-2 text-gray-300">
                 <li>🏆 Led 2 academic software project teams (4-6 members)</li>
                 <li>🏆 Captain - Intercollege Kho-Kho Championship Winner</li>
-                <li>🏆 Organized coding events and workshops in college</li>
+                <li>🏆 Organized and participated in coding events and workshops in college</li>
               </ul>
             </div>
           </div>
