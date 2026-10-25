@@ -34,20 +34,19 @@ export default function Hero() {
 
           {/* Main heading */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">
-            Your Business Deserves{' '}
-            <span className="gradient-text">More Than Just</span>{' '}a Website.
+            Websites That Help Your Business{' '}
+            <span className="gradient-text">Stand Out</span>{' '}and Get More Enquiries.
           </h1>
 
           {/* Supporting heading */}
           <h2 className="text-xl sm:text-2xl font-semibold text-gray-300 mb-5">
-            I Build Modern Websites That Turn Ideas Into Digital Experiences.
+            Professional web development for businesses that want to grow online.
           </h2>
 
           {/* Description */}
           <p className="text-base sm:text-lg text-gray-400 leading-relaxed mb-8 max-w-2xl">
-            I help businesses, startups, and professionals build a strong online
-            presence through modern websites, e-commerce storefronts, and custom
-            web applications tailored to their needs.
+            I build business websites, e-commerce stores, and custom web applications
+            that help you reach customers, showcase your services, and grow your business.
           </p>
 
           {/* Buttons */}

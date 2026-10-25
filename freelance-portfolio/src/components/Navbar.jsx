@@ -38,12 +38,14 @@ export default function Navbar() {
           <a
             href="#home"
             onClick={(e) => handleNavClick(e, '#home')}
-            className="flex items-center gap-2 text-white font-bold text-lg"
+            className="flex items-center gap-2.5 text-white font-bold text-lg group"
           >
-            <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-600 to-magenta-500 flex items-center justify-center text-sm font-bold">
-              L
-            </span>
-            <span>Lokesh S</span>
+            <img 
+              src="/logo.png" 
+              alt="Lokesh S Logo" 
+              className="w-9 h-9 rounded-full transition-transform duration-200 group-hover:scale-105"
+            />
+            <span className="group-hover:text-violet-300 transition-colors duration-200">Lokesh S</span>
           </a>
 
           {/* Desktop Nav */}

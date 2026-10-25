@@ -9,7 +9,7 @@ This is a completely independent application from the job portfolio at https://l
 - Vite 6
 - Tailwind CSS 3
 - React Router DOM 7
-- Web3Forms (contact form submissions)
+- EmailJS (contact form submissions)
 
 ## Local Development
 
@@ -24,7 +24,7 @@ npm install
 copy .env.example .env.local   # Windows
 # cp .env.example .env.local   # macOS / Linux
 
-# 4. Edit .env.local and add your Web3Forms access key (see Contact Form below)
+# 4. Edit .env.local and add your EmailJS credentials (see Contact Form below)
 
 # 5. Start the development server
 npm run dev
@@ -43,18 +43,25 @@ The production output is in the `dist/` directory.
 
 ## Contact Form Setup
 
-The enquiry form uses [Web3Forms](https://web3forms.com/) — a free, no-backend form service.
+The enquiry form uses [EmailJS](https://www.emailjs.com/) — a free email service for client-side form submissions.
 
-1. Go to https://web3forms.com/ and enter your email address.
-2. Web3Forms will email you a free Access Key.
-3. Add it to `.env.local`:
+1. Go to https://www.emailjs.com/ and create a free account.
+2. Create an Email Service (e.g., Gmail, Outlook, etc.).
+3. Create an Email Template with the following template variables:
+   - `{{from_name}}`, `{{from_email}}`, `{{business_name}}`
+   - `{{project_type}}`, `{{project_description}}`
+   - `{{budget}}`, `{{timeline}}`
+4. Get your Public Key from Account → API Keys.
+5. Add your credentials to `.env.local`:
 
 ```
-VITE_WEB3FORMS_ACCESS_KEY=your_access_key_here
+VITE_EMAILJS_SERVICE_ID=service_xxxxxxx
+VITE_EMAILJS_TEMPLATE_ID=template_xxxxxxx
+VITE_EMAILJS_PUBLIC_KEY=your_public_key_here
 ```
 
 > **Important:** Never commit `.env.local` to version control. The `.gitignore` already excludes it.
-> When deploying to Vercel, add `VITE_WEB3FORMS_ACCESS_KEY` as an Environment Variable in the Vercel dashboard instead.
+> When deploying to Vercel, add these three environment variables in the Vercel dashboard instead.
 
 ## Vercel Deployment (Separate Project)
 
@@ -73,7 +80,10 @@ If this `freelance-portfolio/` folder is inside the same Git repository as the e
    - **Build Command:** `npm run build`
    - **Output Directory:** `dist`
    - **Install Command:** `npm install`
-5. Add the environment variable `VITE_WEB3FORMS_ACCESS_KEY` in Project Settings → Environment Variables.
+5. Add the environment variables in Project Settings → Environment Variables:
+   - `VITE_EMAILJS_SERVICE_ID`
+   - `VITE_EMAILJS_TEMPLATE_ID`
+   - `VITE_EMAILJS_PUBLIC_KEY`
 6. Click Deploy.
 7. In Vercel's project settings, set a custom project name such as `lokesh-freelance-portfolio`.
 
@@ -84,7 +94,7 @@ If this `freelance-portfolio/` folder is inside the same Git repository as the e
 1. Copy the `freelance-portfolio/` directory into a new repository.
 2. Push to GitHub.
 3. Import from https://vercel.com/new — Root Directory is the repository root, so no override needed.
-4. Add the `VITE_WEB3FORMS_ACCESS_KEY` environment variable.
+4. Add the EmailJS environment variables.
 5. Deploy.
 
 ### SPA Routing
@@ -95,7 +105,9 @@ The `vercel.json` at the project root rewrites all routes to `index.html`, enabl
 
 | Variable | Required | Description |
 |---|---|---|
-| `VITE_WEB3FORMS_ACCESS_KEY` | Yes (for form) | Web3Forms access key for contact form submissions |
+| `VITE_EMAILJS_SERVICE_ID` | Yes (for form) | EmailJS service ID |
+| `VITE_EMAILJS_TEMPLATE_ID` | Yes (for form) | EmailJS template ID |
+| `VITE_EMAILJS_PUBLIC_KEY` | Yes (for form) | EmailJS public key |
 
 All `VITE_` prefixed variables are embedded at build time by Vite. Do not store private API keys in frontend environment variables.
 
@@ -122,4 +134,4 @@ freelance-portfolio/
 
 - This application does not import from or depend on the job portfolio files.
 - All links, emails, and URLs are real. No fabricated testimonials or statistics.
-- The contact form requires a Web3Forms key to send submissions. Without it, form submission shows an error with a direct email fallback.
+- The contact form requires EmailJS credentials to send submissions. Without them, form submission shows an error with a direct email fallback.

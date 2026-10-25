@@ -30,10 +30,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-600 to-magenta-500 flex items-center justify-center text-sm font-bold text-white">
-                L
-              </span>
+            <div className="flex items-center gap-2.5 mb-4">
+              <img 
+                src="/logo.png" 
+                alt="Lokesh S Logo" 
+                className="w-9 h-9 rounded-full"
+              />
               <span className="text-white font-bold text-lg">Lokesh S</span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
@@ -116,14 +118,15 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-gray-500 text-sm">© {YEAR} Lokesh S. Independent Web Developer.</p>
-          <a
-            href="https://lokeshs-portfolio.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-500 hover:text-violet-400 text-sm transition-colors"
+          <button
+            onClick={() => {
+              const el = document.getElementById('contact')
+              if (el) el.scrollIntoView({ behavior: 'smooth' })
+            }}
+            className="text-violet-400 hover:text-violet-300 text-sm font-medium transition-colors flex items-center gap-1"
           >
-            Looking for my job portfolio? →
-          </a>
+            Ready to start your project? →
+          </button>
         </div>
       </div>
     </footer>

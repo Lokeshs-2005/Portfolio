@@ -8,11 +8,11 @@ export default function Services() {
   }
 
   return (
-    <section id="services" className="py-24 relative">
+    <section id="services" className="py-20 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-navy-900 via-charcoal-900 to-navy-900" />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-violet-500/30 bg-violet-500/10 mb-4">
             <span className="text-violet-300 text-xs font-semibold tracking-widest uppercase">Services</span>
           </div>

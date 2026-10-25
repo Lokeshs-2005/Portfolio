@@ -1,8 +1,8 @@
 export default function About() {
   return (
-    <section id="about" className="py-24 relative bg-navy-800/20">
+    <section id="about" className="py-20 relative bg-navy-800/20">
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Text */}
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-violet-500/30 bg-violet-500/10 mb-6">

@@ -33,11 +33,11 @@ const steps = [
 
 export default function Process() {
   return (
-    <section id="process" className="py-24 relative">
+    <section id="process" className="py-20 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-navy-900 via-navy-800/50 to-navy-900" />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-violet-500/30 bg-violet-500/10 mb-4">
             <span className="text-violet-300 text-xs font-semibold tracking-widest uppercase">How I Work</span>
           </div>
@@ -48,22 +48,22 @@ export default function Process() {
         </div>
 
         {/* Steps */}
-        <div className="relative">
+        <div className="relative max-w-4xl mx-auto">
           {/* Vertical line */}
           <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-violet-500/0 via-violet-500/30 to-violet-500/0 -translate-x-1/2" />
 
-          <div className="space-y-12">
+          <div className="space-y-8">
             {steps.map((step, index) => (
               <div
                 key={step.number}
-                className={`flex flex-col md:flex-row items-start md:items-center gap-8 ${
+                className={`flex flex-col md:flex-row items-start md:items-center gap-6 ${
                   index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
                 }`}
               >
                 {/* Content */}
                 <div className={`flex-1 ${ index % 2 === 0 ? 'md:text-right' : 'md:text-left' }`}>
-                  <div className="card max-w-sm md:mx-auto">
-                    <div className="text-3xl font-bold gradient-text mb-2">{step.number}</div>
+                  <div className="card max-w-md md:mx-auto">
+                    <div className="text-2xl font-bold gradient-text mb-2">{step.number}</div>
                     <h3 className="text-lg font-semibold text-white mb-2">{step.title}</h3>
                     <p className="text-gray-400 text-sm leading-relaxed">{step.description}</p>
                   </div>

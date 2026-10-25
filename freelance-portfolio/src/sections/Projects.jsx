@@ -21,25 +21,24 @@ function FeatureItem({ text }) {
 
 function ProjectCard({ project }) {
   return (
-    <div className="card hover:border-violet-500/20 overflow-hidden">
+    <div className="card hover:border-violet-500/20">
       {/* Header */}
       <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
-        <div>
-          <span className="text-xs font-semibold text-violet-400 tracking-widest uppercase">
-            {project.type}
-          </span>
-          <h3 className="text-xl font-bold text-white mt-1">{project.title}</h3>
-        </div>
+        <span className="text-xs font-semibold text-violet-400 tracking-widest uppercase">
+          {project.type}
+        </span>
         <span className="text-xs font-medium px-3 py-1 rounded-full border border-violet-500/30 bg-violet-500/10 text-violet-300">
           {project.category}
         </span>
       </div>
 
+      <h3 className="text-2xl font-bold text-white mb-4">{project.title}</h3>
+
       {/* Description */}
-      <p className="text-gray-400 text-sm leading-relaxed mb-5">{project.description}</p>
+      <p className="text-gray-400 leading-relaxed mb-6">{project.description}</p>
 
       {/* Features */}
-      <div className="mb-5">
+      <div className="mb-6">
         <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Key Features</p>
         <ul className="space-y-2">
           {project.features.map((f) => (
@@ -63,7 +62,7 @@ function ProjectCard({ project }) {
         href={project.liveUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="btn-primary w-full sm:w-auto text-sm"
+        className="btn-primary text-sm inline-flex"
       >
         View Live Website
         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -76,22 +75,21 @@ function ProjectCard({ project }) {
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 relative bg-navy-800/30">
+    <section id="projects" className="py-20 relative bg-navy-800/30">
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-violet-500/30 bg-violet-500/10 mb-4">
             <span className="text-violet-300 text-xs font-semibold tracking-widest uppercase">Featured Work</span>
           </div>
           <h2 className="section-heading">Projects I've Built</h2>
           <p className="section-subheading mx-auto">
-            Real projects built for real purposes — websites and applications delivering
-            practical value to their users.
+            Real projects delivering practical value to businesses and their customers.
           </p>
         </div>
 
         {/* Project cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="max-w-5xl mx-auto">
           {projects.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
