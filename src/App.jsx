@@ -455,7 +455,7 @@ export default function Portfolio() {
               <h3 className="font-semibold text-lg mb-2">Email</h3>
               <p className="text-sm text-purple-100">Send a message</p>
             </a>
-            <a href="/freelance-portfolio/index.html" target="_blank" rel="noopener noreferrer"
+            <a href="https://lokesh-freelance-portfolio.vercel.app" target="_blank" rel="noopener noreferrer"
                className="bg-gradient-to-r from-green-600 to-emerald-600 p-6 rounded-xl hover:scale-105 transition shadow-lg">
               <div className="text-4xl mb-3">
                 <svg className="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
