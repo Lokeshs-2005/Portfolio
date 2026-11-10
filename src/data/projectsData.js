@@ -62,8 +62,6 @@ export const projectsData = {
       { url: "/goodkart project screenshot.png", caption: "Goodkart Platform Interface" }
     ],
     
-    video: "https://drive.google.com/file/d/1yG0GDbnoe30qPFME8Qo74mMR7S6ABTA0/view?usp=drive_link",
-    
     technicalDetails: {
       frontend: {
         title: "Frontend Architecture",
@@ -188,8 +186,6 @@ export const projectsData = {
     screenshots: [
       { url: "/goodgide project screenshot.png", caption: "Goodgide Platform Interface" }
     ],
-    
-    video: "https://drive.google.com/file/d/1mBJVXgHOKPGM-_Gog1CdOhJ5ZSYlWy4o/view?usp=drive_link",
     
     technicalDetails: {
       frontend: {
